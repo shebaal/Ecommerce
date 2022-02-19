@@ -18,7 +18,7 @@ welcome
   <div class="card-body">
     <h5 class="card-title"> <%= mypost.title %></h5>
     <p class="card-text"><%= mypost.body %></p>
-    <a href="" class="btn btn-primary" onclick="go_to_single(mypost.id)">more details</a>
+    <button class="btn btn-primary" onclick="go_to_single()">more details</button>
   </div>
 
 </div>
@@ -27,14 +27,16 @@ welcome
 
   
 <script>
-  function go_to_single(id){
-    axios.get('https://jsonplaceholder.typicode.com/posts/${id}')
-  .then((response)=>{
-    res.render('single_product', { pposts: response.data});
+  
+  function go_to_single(){
+  axios.post('http://jsonplaceholder.typicode.com/posts/1')
+     .then((response)=>{
+    res.response('single_product', { pposts: response.data});
   }).catch((err)=>{
     console.log("opps ther is no data")
   })
   }
+
 </script>
 
     
