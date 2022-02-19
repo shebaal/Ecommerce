@@ -8,6 +8,12 @@ const url ='https://dummyjson.com/products'
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
+  axios.get('https://jsonplaceholder.typicode.com/posts')
+  .then((response)=>{
+    res.render('index', { pposts: response.data});
+  }).catch((err)=>{
+    console.log("opps ther is no data")
+  })
 });
 
 module.exports = router;
