@@ -10,17 +10,19 @@
 welcome
 
 
-
-<div class="card" style="width: 18rem;">
+<div class="row">
   
   <% pposts.forEach( function (mypost){ %>
-  <img class="card-img-top" src="/public/images/تنزيل.jpg" alt="Card image cap">
+<div class=" col-4 card m-3" style="width: 18rem;">
+  
   <div class="card-body">
     <h5 class="card-title"> <%= mypost.title %></h5>
     <p class="card-text"><%= mypost.body %></p>
     <a href="#" class="btn btn-primary">more details</a>
   </div>
-  <%  }); %>
+
+</div>
+<%  }); %>
 </div>
 
 
