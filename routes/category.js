@@ -1,17 +1,19 @@
 var express = require('express');
 var router = express.Router();
 
-const axios=require('axios');
+const axios = require('axios');
 
 // categories
-router.get('/category', function(req, res, next) {
+router.get('/products/category', function (req, res, next) {
 
   axios.get('https://dummyjson.com/products/categories')
-  .then((response)=>{
-    res.render('category', { pposts: response.data});
-  }).catch((err)=>{
-    console.log("opps ther is no data")
-  })
+    .then((response) => {
+      res.render('category', { pposts: response.data });
+
+      console.log(pposts,'jihih')
+    }).catch((err) => {
+      console.log("opps ther is no data")
+    })
 });
 
 

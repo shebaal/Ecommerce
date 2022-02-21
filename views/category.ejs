@@ -16,11 +16,11 @@ categories
     <% pposts.forEach( function (mypost){ %>
       <div class="card text-center">
           <div class="card-header">
-            <%= mypost.id %>
+            <%= mypost[0] %>
           </div>
         
           <div class="card-footer text-muted">
-           <%= mypost.title %>
+           <!-- <%= mypost.title %> -->
           </div>
         </div>
   <%  }); %>
